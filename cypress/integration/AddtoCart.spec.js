@@ -1,4 +1,6 @@
 /// <reference types="cypress" />
+import {mpp} from '../fixtures/shared/mppdata'
+
 describe('View Product' , () =>{
     // beforeEach(()=>{
     //     Cypress.Cookies.preserveOnce('currentUser','ugid','authRefresh','_ga','sp_id.0295','authToken')
@@ -14,7 +16,7 @@ describe('View Product' , () =>{
         // cy.get('#email').type('mine@yopmail.com',{force:true})
         // cy.get('#password').type('mine@yopmail.com',{force:true})
         // cy.get('.form_submit_btn').click({force:true})
-        cy.login('mine@yopmail.com','mine@yopmail.com')
+        cy.login(mpp.mineMail,mpp.minePassword)
 
 
         cy.get('[alt = "158"]').click()  
