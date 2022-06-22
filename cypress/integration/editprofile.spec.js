@@ -1,4 +1,6 @@
 /// <reference types="cypress" />
+import {mpp} from '../fixtures/shared/mppdata'
+
 describe('EditProfile',() =>{
     it('login',() =>{
         // cy.visit("http://localhost:3000/")
@@ -7,7 +9,8 @@ describe('EditProfile',() =>{
         // cy.get('#email').type('testone@yopmail.com',{force:true})
         // cy.get('#password').type('testone@yopmail.com',{force:true})
         // cy.get('.form_submit_btn').click({force:true})
-        cy.login('testone@yopmail.com','testone@yopmail.com')
+
+        cy.login(mpp.testoneMail,mpp.testonePassword)
     })
 
     it('edit profile Page',() =>{

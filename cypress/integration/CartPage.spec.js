@@ -1,4 +1,6 @@
 /// <reference types="cypress" />
+import {mpp} from '../fixtures/shared/mppdata'
+
 describe('Cart Page',() => {
      
     it('individual login' , () =>{
@@ -9,7 +11,8 @@ describe('Cart Page',() => {
     //     cy.get('#password').type('testone@yopmail.com',{force:true})
     //     cy.get('.form_submit_btn').click({force:true})
 
-    cy.login('testone@yopmail.com','testone@yopmail.com')
+    cy.login(mpp.testoneMail,mpp.testonePassword)
+
      })
 
 

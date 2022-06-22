@@ -1,7 +1,9 @@
 /// <reference types="cypress" />
+import {mpp} from '../fixtures/shared/mppdata'
+
 describe('Comment on Products' , () =>{
     it('individual login' , () =>{
-        cy.login('mine@yopmail.com','mine@yopmail.com')
+        cy.login(mpp.mineMail,mpp.minePassword)
     })
     
     it('comment of products' , () =>{

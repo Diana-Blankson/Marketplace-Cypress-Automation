@@ -25,7 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import 'cypress-file-upload';
-import {individual_email,password1} from '../fixtures/shared/mppdata'
+import {mpp} from '../fixtures/shared/mppdata'
 
 Cypress.Commands.add('login', (email, password) => { 
     cy.visit('/login')

@@ -1,4 +1,6 @@
 /// <reference types="cypress" />
+import {mpp} from '../fixtures/shared/mppdata'
+
 describe('Post product',()=>{
 beforeEach(()=>{
     Cypress.Cookies.preserveOnce('authToken')
@@ -7,12 +9,14 @@ after(()=>{
     cy.clearCookie('authToken')
 })
 it('business login' , () =>{
-    cy.visit("http://localhost:3000/")
-    cy.get('.loginButton').click({force:true})
-    cy.url().should('eq','http://localhost:3000/login')
-    cy.get('#email').type('peacegroup29@gmail.com',{force:true})
-    cy.get('#password').type('peacegroup29@gmail.com',{force:true})
-    cy.get('.form_submit_btn').click({force:true})
+    // cy.visit("http://localhost:3000/")
+    // cy.get('.loginButton').click({force:true})
+    // cy.url().should('eq','http://localhost:3000/login')
+    // cy.get('#email').type('peacegroup29@gmail.com',{force:true})
+    // cy.get('#password').type('peacegroup29@gmail.com',{force:true})
+    // cy.get('.form_submit_btn').click({force:true})
+
+    cy.login(mpp.businessMail,mpp.businessPassword)
 })
 
 it('add product' , () =>{
