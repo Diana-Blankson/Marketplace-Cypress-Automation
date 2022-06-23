@@ -5,6 +5,6 @@ export const mpp ={
     testonePassword : "testone@yopmail.com",
     businessMail: "peacegroup29@gmail.com",
     businessPassword: "peacegroup29@",
-    adminMail: "admin@mail.com" ,
+    adminMail: "admin@mail.com",
     password1 : "Hello1234!"
 } 
