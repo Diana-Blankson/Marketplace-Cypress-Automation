@@ -24,6 +24,7 @@
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
+import 'cypress-mailosaur'
 import 'cypress-file-upload';
 import {mpp} from '../fixtures/shared/mppdata'
 

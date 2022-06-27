@@ -6,5 +6,8 @@ export const mpp ={
     businessMail: "peacegroup29@gmail.com",
     businessPassword: "peacegroup29@",
     adminMail: "admin@mail.com",
-    password1 : "Hello1234!"
+    password1 : "Hello1234!",
+    password2 : "Hello1234!1234!",
+    mail : 'mario' + new Date().getTime() + '@',
+    invalidmail: "dksoiejifejojf"
 } 
