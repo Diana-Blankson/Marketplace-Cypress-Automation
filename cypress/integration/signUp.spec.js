@@ -21,17 +21,10 @@ describe('sign up', () =>{
         signup.fillSignup(emailAddress,mpp.password2, mpp.password3)
     })
 
-    it('clear fields', () =>{
-        cy.get('#email').clear({force:true})
-        cy.get('#Password').clear({force:true})
-        cy.get('[placeholder="**********"]').clear({force:true})
-    })
+
 
     it('sign up with correct credentials', () =>{
-        cy.get('#email').type(emailAddress,{force:true})
-        cy.get('#Password').type(mpp.password2,{force:true})
-        cy.get('[placeholder="**********"]').eq(1).type(mpp.password2,{force:true})
-        cy.get('.signup-btn-register').click({force:true})
+        signup.fillSignup(emailAddress,mpp.password2, mpp.password2)
         
         
     })
