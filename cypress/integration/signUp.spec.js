@@ -1,10 +1,12 @@
 /// <reference types="cypress" />
 import {mpp} from '../fixtures/shared/mppdata'
+import Signup from '../classes/signUp'
 
 describe('sign up', () =>{
     const serverId = 'w6jtvutj'
     const serverDomain = 'w6jtvutj.mailosaur.net'
     const emailAddress = mpp.mail + serverDomain
+    const signup = new Signup()
 
     it('click sign up', () =>{
         cy.visit('/login')
@@ -12,32 +14,19 @@ describe('sign up', () =>{
     })
 
     it('invalid email', () =>{
-          cy.get('#email').type(mpp.invalidmail,{force:true})
-          cy.get('#Password').type(mpp.password2,{force:true})
-          cy.get('[placeholder="**********"]').eq(1).type(mpp.password2,{force:true})
-          cy.get('.signup-btn-register').click({force:true})
+        signup.fillSignup(mpp.invalidmail,mpp.password2, mpp.password2)
     })
 
     it('mismatch password', () =>{
-          //mismatch password
-          cy.get('#email').clear({force:true}).type(mpp.invalidmail,{force:true})
-          cy.get('#Password').clear({force:true}).type(mpp.password2,{force:true})
-          cy.get('[placeholder="**********"]').clear({force:true}).eq(1).type(mpp.password1,{force:true})
-          cy.get('.signup-btn-register').click({force:true})
+        signup.fillSignup(emailAddress,mpp.password2, mpp.password3)
     })
 
-    it('clear all fields',() =>{
-        //clear all fields
-        cy.get('#email').clear({force:true})
-        cy.get('#Password').clear({force:true})
-        cy.get('[placeholder="**********"]').clear({force:true})
-    })
+
 
     it('sign up with correct credentials', () =>{
-        cy.get('#email').type(emailAddress,{force:true})
-        cy.get('#Password').type(mpp.password2,{force:true})
-        cy.get('[placeholder="**********"]').eq(1).type(mpp.password2,{force:true})
-        cy.get('.signup-btn-register').click({force:true})
+        signup.fillSignup(emailAddress,mpp.password2, mpp.password2)
+        
+        
     })
 
     it('email verification with mailosaur', () =>{     
