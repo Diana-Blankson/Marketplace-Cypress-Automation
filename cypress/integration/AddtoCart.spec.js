@@ -1,7 +1,7 @@
 /// <reference types="cypress" />
 import {mpp} from '../fixtures/shared/mppdata'
 
-describe('View Product' , () =>{
+describe('Add to cart' , () =>{
     // beforeEach(()=>{
     //     Cypress.Cookies.preserveOnce('currentUser','ugid','authRefresh','_ga','sp_id.0295','authToken')
     // })
@@ -9,28 +9,27 @@ describe('View Product' , () =>{
     //     cy.clearCookie('currentUser','ugid','authRefresh','_ga','sp_id.0295','authToken')
     // })
 
-    it('individual login' , () =>{
-        // cy.visit("http://localhost:3000/")
-        // cy.get('.loginButton').click({force:true})
-        // cy.url().should('eq','http://localhost:3000/login')
-        // cy.get('#email').type('mine@yopmail.com',{force:true})
-        // cy.get('#password').type('mine@yopmail.com',{force:true})
-        // cy.get('.form_submit_btn').click({force:true})
+    it('Add to cart' , () =>{
+        //login
         cy.login(mpp.mineMail,mpp.minePassword)
 
-
+        //view product
         cy.get('[alt = "158"]').click()  
         cy.contains('V-Neck Top')
+
+        //add to cart
         cy.contains('Add to cart').click({force:true})
-    
+
+        //click on cart icon
+        cy.get('[data-testid="ShoppingCartIcon"]').first().click({force:true})
+
+        //delete product
+        cy.get('[data-testid="DeleteIcon"]').first().click({force:true})
+        cy.contains('You want to delete V-Neck Top').should('be.visible')
+        cy.contains('Delete').click({force:true})
+
+        //assert the page has no product
+        cy.contains('Hi there, you have an empty cart, click here to add a product').should('be.visible')
     })
     
-    // it('view product' , () =>{
-    //     cy.get('[alt = "158"]').click()
-    //     cy.contains('V-Neck Top')
-    // })
-
-    // it('add to cart' , () =>{
-    //     cy.contains('Add to cart').click({force:true})
-    // })
     })

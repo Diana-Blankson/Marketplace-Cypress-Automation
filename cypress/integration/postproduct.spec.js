@@ -9,12 +9,6 @@ after(()=>{
     cy.clearCookie('authToken')
 })
 it('business login' , () =>{
-    // cy.visit("http://localhost:3000/")
-    // cy.get('.loginButton').click({force:true})
-    // cy.url().should('eq','http://localhost:3000/login')
-    // cy.get('#email').type('peacegroup29@gmail.com',{force:true})
-    // cy.get('#password').type('peacegroup29@gmail.com',{force:true})
-    // cy.get('.form_submit_btn').click({force:true})
 
     cy.login(mpp.businessMail,mpp.businessPassword)
 })
@@ -31,6 +25,7 @@ it('post product image' , () =>{
     .attachFile(imagefile, { subjectType: 'drag-n-drop' });
     cy.contains('click here')
     .attachFile(imagefile, { subjectType: 'drag-n-drop' });  
+    
 })
 
 it('product information',() =>{
@@ -46,5 +41,8 @@ it('product information',() =>{
     cy.get('.MuiList-root > [tabindex="0"]').click({force:true})
     cy.contains('Product').click({force:true},{multiple:true})
     cy.get('.add-product-button').click({force:true})
+
 })
+
+
 })
