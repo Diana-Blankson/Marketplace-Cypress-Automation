@@ -2,14 +2,8 @@
 import {mpp} from '../fixtures/shared/mppdata'
 
 describe('Cart Page',() => {
-     
+    
     it('individual login' , () =>{
-    //     cy.visit("http://localhost:3000/")
-    //     cy.get('.loginButton').click({force:true})
-    //     cy.url().should('eq','http://localhost:3000/login')
-    //     cy.get('#email').type('testone@yopmail.com',{force:true})
-    //     cy.get('#password').type('testone@yopmail.com',{force:true})
-    //     cy.get('.form_submit_btn').click({force:true})
 
     cy.login(mpp.testoneMail,mpp.testonePassword)
 
@@ -22,11 +16,41 @@ describe('Cart Page',() => {
         cy.get('[data-testid="ShoppingCartIcon"]').first().click({force:true})
 
         //button disabled when page is empty
-        cy.contains('Place Order').should('be.disabled')
+        cy.contains('Checkout').should('be.disabled')
+
+        //view product
         cy.get('[src="/images/mkp_logo.svg"]').click()
         cy.get('[alt = "158"]').click()
         cy.contains('V-Neck Top')
+
+        //add product to cart
         cy.contains('Add to cart').click({force:true})
+
+        //revisit cart page
+        cy.get('[data-testid="ShoppingCartIcon"]').first().click({force:true})
+
+        //increase quantity
+        cy.get('[data-testid="AddIcon"]').click({force:true})
+        cy.get('[type="text"]').should('have.value', 2)
+        
+
+        //decrease quantity
+        cy.get('[data-testid="RemoveIcon"]').click({force:true})
+        cy.get('[type="text"]').should('have.value', 1)
+
+        //total
+        cy.get('[data-testid="AddIcon"]').click({force:true})
+        cy.get('.currency-formater').eq(3).should('have.text','GH₵ 156.80') 
+
+        //unchecking product
+        cy.get('[type="checkbox"]').eq(1).uncheck({force:true}) 
+        cy.get('[type="checkbox"]').should('not.be.checked',({force:true}))
+        cy.wait(9000)
+
+        //delete product
+        cy.get('[data-testid="DeleteIcon"]').first().click({force:true})
+        cy.contains('Delete').click({force:true})
+        cy.contains('Hi there, you have an empty cart, click here to add a product').should('be.visible')
 
     })
 
