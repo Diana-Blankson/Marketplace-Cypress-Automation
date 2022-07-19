@@ -25,6 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import 'cypress-mailosaur'
+import 'cypress-iframe'
 import 'cypress-file-upload';
 import {mpp} from '../fixtures/shared/mppdata'
 
@@ -34,3 +35,10 @@ Cypress.Commands.add('login', (email, password) => {
     cy.get('#password').type(password,{force:true})
     cy.get('[type="submit"]').click({force:true})
  })
+
+ Cypress.Commands.add('getIframe', (iframe) => {
+    return cy.get(iframe)
+        .its('0.contentDocument.body')
+        .should('be.visible')
+        .then(cy.wrap);
+})
