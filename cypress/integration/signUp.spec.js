@@ -1,10 +1,11 @@
 /// <reference types="cypress" />
-import {mpp} from '../fixtures/shared/mppdata'
+const mpp = require ('../fixtures/shared/mppdata')
 import Signup from '../classes/signUp'
 
+
 describe('sign up', () =>{
-    const serverId = 'w6jtvutj'
-    const serverDomain = 'w6jtvutj.mailosaur.net'
+    const serverId = 'p6v877nj'
+    const serverDomain = 'p6v877nj.mailosaur.net'
     const emailAddress = mpp.mail + serverDomain
     const signup = new Signup()
 

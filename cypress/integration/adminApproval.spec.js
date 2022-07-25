@@ -1,14 +1,8 @@
 /// <reference types="cypress" />
-import {mpp} from '../fixtures/shared/mppdata'
+const mpp = require ('../fixtures/shared/mppdata')
 
 describe('admin approval of posted products',() => {
 it('login',() =>{
-    // cy.visit("https://staging.d3o0f92tyu6euq.amplifyapp.com/")
-    // cy.get('.loginButton').click({force:true})
-    // cy.url().should('eq','https://staging.d3o0f92tyu6euq.amplifyapp.com/login')
-    // cy.get('#email').type(mpp.adminMail,{force:true})
-    // cy.get('#password').type(mpp.password1,{force:true})
-    // cy.get('.form_submit_btn').click({force:true})
 
     cy.login(mpp.adminMail,mpp.password1)
 })

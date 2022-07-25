@@ -1,14 +1,8 @@
 /// <reference types="cypress" />
-import {mpp} from '../fixtures/shared/mppdata'
+const mpp = require ('../fixtures/shared/mppdata')
 
 describe('View Product' , () =>{
 it('individual login' , () =>{
-    // cy.visit("http://localhost:3000/")
-    // cy.get('.loginButton').click({force:true})
-    // cy.url().should('eq','http://localhost:3000/login')
-    // cy.get('#email').type('mine@yopmail.com',{force:true})
-    // cy.get('#password').type('mine@yopmail.com',{force:true})
-    // cy.get('.form_submit_btn').click({force:true})
 
     cy.login(mpp.mineMail,mpp.minePassword)
 

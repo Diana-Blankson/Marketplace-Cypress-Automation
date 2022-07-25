@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import {mpp} from '../fixtures/shared/mppdata'
+const mpp = require ('../fixtures/shared/mppdata')
 
 describe('Add to cart' , () =>{
     // beforeEach(()=>{

@@ -1,6 +1,6 @@
-export const mpp ={
-    mineMail : "mine@yopmail.com",
-    minePassword : "mine@yopmail.com",
+module.exports ={
+    mineMail : "minesecond@yopmail.com",
+    minePassword : "minesecond@yopmail.com",
 
     testoneMail : "testone@yopmail.com",
     testonePassword : "testone@yopmail.com",

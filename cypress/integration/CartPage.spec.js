@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-import {mpp} from '../fixtures/shared/mppdata'
+const mpp = require ('../fixtures/shared/mppdata')
 
 describe('Cart Page',() => {
     
@@ -38,9 +38,9 @@ describe('Cart Page',() => {
         cy.get('[data-testid="RemoveIcon"]').click({force:true})
         cy.get('[type="text"]').should('have.value', 1)
 
-        //total
-        // cy.get('[data-testid="AddIcon"]').click({force:true})
-        // cy.get('.currency-formater').eq(3).should('have.text','GH₵ 156.80')
+        total
+        cy.get('[data-testid="AddIcon"]').click({force:true})
+        cy.get('.currency-formater').eq(3).should('have.text','GH₵ 156.80')
 
 
         cy.get('div:nth-child(1) > span > .currency-formater').then((total)=>{
@@ -58,14 +58,14 @@ describe('Cart Page',() => {
         })
 
         //unchecking product
-        // cy.get('[type="checkbox"]').eq(1).uncheck({force:true}) 
-        // cy.get('[type="checkbox"]').should('not.be.checked',({force:true}))
-        // cy.wait(9000)
+        cy.get('[type="checkbox"]').eq(1).uncheck({force:true}) 
+        cy.get('[type="checkbox"]').should('not.be.checked',({force:true}))
+        cy.wait(9000)
 
         //delete product
-        // cy.get('[data-testid="DeleteIcon"]').first().click({force:true})
-        // cy.contains('Delete').click({force:true})
-        // cy.contains('Hi there, you have an empty cart, click here to add a product').should('be.visible')
+        cy.get('[data-testid="DeleteIcon"]').first().click({force:true})
+        cy.contains('Delete').click({force:true})
+        cy.contains('Hi there, you have an empty cart, click here to add a product').should('be.visible')
 
     })
 

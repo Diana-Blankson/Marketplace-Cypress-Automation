@@ -25,7 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 import 'cypress-mailosaur'
-import 'cypress-iframe'
+//import 'cypress-iframe'
 import 'cypress-file-upload';
 import {mpp} from '../fixtures/shared/mppdata'
 
