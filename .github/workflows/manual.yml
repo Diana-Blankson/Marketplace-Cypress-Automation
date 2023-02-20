@@ -17,7 +17,6 @@ jobs:
 
     - name: Run tests with Cypress
       uses: cypress-io/github-action@v2
-      
 
-      env:
-        CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}git 
+
+        
