@@ -19,7 +19,7 @@ jobs:
       uses: cypress-io/github-action@v2
       with:
         record: true
-        start: npm start
+        start: npx cypress open
         wait-on: 'https://marketplace.amalitech-dev.net/'
 
       env:
