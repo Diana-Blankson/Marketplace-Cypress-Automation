@@ -17,10 +17,7 @@ jobs:
 
     - name: Run tests with Cypress
       uses: cypress-io/github-action@v2
-      with:
-        record: true
-        start: npx cypress open
-        wait-on: 'https://marketplace.amalitech-dev.net/'
+      
 
       env:
         CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}git 
