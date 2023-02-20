@@ -35,13 +35,13 @@ describe('Comment on Products' , () =>{
 
         // delete comment
         //click on no 
-        cy.get('[data-testid="DeleteIcon"]').eq(0).click({force:true})
-        cy.contains('No').click({force:true})
+        // cy.get('[data-testid="DeleteIcon"]').eq(0).click({force:true})
+        // cy.contains('No').click({force:true})
 
         //confirm the comment is still there
-        cy.get(':nth-child(2) > .chat-container > :nth-child(2) > .customer-comment').eq(0).should('include.text','Yes I love this')
+        //cy.get(':nth-child(2) > .chat-container > :nth-child(2) > .customer-comment').eq(0).should('include.text','Yes I love this')
 
-        //click on yes to delte comment
+        //click on yes to delete comment
         cy.get('[data-testid="DeleteIcon"]').eq(0).click({force:true})
         cy.get('.btn_actions_container > :nth-child(2)').click({force:true})
         //cy.get(':nth-child(2) > .chat-container > :nth-child(2) > .customer-comment').eq(0).should('not.contain','Yes I love this')

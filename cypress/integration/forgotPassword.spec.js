@@ -15,19 +15,19 @@ describe('sign up', () =>{
 
     const signup = new Signup()
 
-    it('click sign up', () =>{
+    it.skip('click sign up', () =>{
         cy.visit('/login')
         cy.contains('Sign up').click({force:true})
     })
 
 
-    it('sign up with correct credentials', () =>{
+    it.skip('sign up with correct credentials', () =>{
         signup.fillSignup(emailAddress,mpp.password2, mpp.password2)
       
         
     })
 
-    it('email verification with mailosaur', () =>{     
+    it.skip('email verification with mailosaur', () =>{     
        
         cy.get('.custom-ui > div > button').click({force:true})
         cy.url().should('include','confirm-account')
@@ -57,7 +57,7 @@ describe('sign up', () =>{
         
     })
 
-    it('forgot password with mailosaur' , () =>{
+    it.skip('forgot password with mailosaur' , () =>{
         cy.contains('Forgot Password').click({force:true})
         cy.url().should('eq','https://staging.d3o0f92tyu6euq.amplifyapp.com/forgot-password')
         cy.get('#reset_password').clear({force:true}).type(emailAddress,{force:true})

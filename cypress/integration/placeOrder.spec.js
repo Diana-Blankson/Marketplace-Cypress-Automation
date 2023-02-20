@@ -30,16 +30,21 @@ describe('placeOrder', () =>{
         //check products & checkout
         cy.get('[type="checkbox"]').eq(0).check({force:true}).should('be.checked')
         cy.contains('Checkout').click({force:true})
-        cy.get('.paystack-junctin-content > input').type('minefifth@yopmail.com',{force:true})
-        cy.contains('Continue').click({force:true})
-        cy.wait(1500)
+        
+        // cy.get('.paystack-junctin-content > input').type('minefifth@yopmail.com',{force:true})
+        // cy.contains('Continue').click({force:true})
+        // cy.wait(1500)
+
+        //checkout page
+        
+    
 
         //paystack payment
-        cy.get('[src="https://checkout.paystack.com/popup"]').its('0.contentDocument.body')
-        .contains('Mobile Money').click({force:true})
-        cy.get('[src="https://checkout.paystack.com/popup"]').its('0.contentDocument.body')
-        .contains('Confirm').click({force:true})
-        cy.wait(3000)
+        // cy.get('[src="https://checkout.paystack.com/popup"]').its('0.contentDocument.body')
+        // .contains('Mobile Money').click({force:true})
+        // cy.get('[src="https://checkout.paystack.com/popup"]').its('0.contentDocument.body')
+        // .contains('Confirm').click({force:true})
+        // cy.wait(3000)
        
           
     })

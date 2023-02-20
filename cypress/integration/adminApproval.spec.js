@@ -26,7 +26,7 @@ it('admin approval of posted products', () =>{
 
     //remove post
     cy.contains('Remove Post').click({force:true})
-    cy.url().should('eq','https://staging.d3o0f92tyu6euq.amplifyapp.com/')
+    cy.url().should('eq','https://marketplace.amalitech-dev.net/')
     cy.contains('Products').should('be.visible')
 })
 

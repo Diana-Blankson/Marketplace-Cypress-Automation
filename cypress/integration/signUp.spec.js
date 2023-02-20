@@ -4,13 +4,13 @@ import Signup from '../classes/signUp'
 
 
 describe('sign up', () =>{
-    const serverId = 'p6v877nj'
-    const serverDomain = 'p6v877nj.mailosaur.net'
+    const serverId = 'bd7ir8mo'
+    const serverDomain = 'bd7ir8mo.mailosaur.net'
     const emailAddress = mpp.mail + serverDomain
     const signup = new Signup()
 
     it('click sign up', () =>{
-        cy.visit('/login')
+        cy.visit('https://marketplace.amalitech-dev.net/login')
         cy.contains('Sign up').click({force:true})
     })
 
@@ -59,7 +59,7 @@ describe('sign up', () =>{
         cy.get('#four').type(splitVerificationCodes[3],{force:true})
 
         cy.get('.confirm-button').click({force:true})
-        cy.url().should('eq','https://staging.d3o0f92tyu6euq.amplifyapp.com/login')
+        cy.url().should('eq','https://marketplace.amalitech-dev.net/login')
         })
     })
     
