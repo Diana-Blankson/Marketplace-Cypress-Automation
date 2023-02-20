@@ -20,7 +20,7 @@ jobs:
       with:
         record: true
         start: npm start
-        wait-on: 'http://localhost:3000'
+        wait-on: 'https://marketplace.amalitech-dev.net/'
 
       env:
-        CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}git 
